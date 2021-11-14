@@ -1,0 +1,386 @@
+/*variables*/
+:root{
+    /*Fuentes*/
+    --fuentePrincipal: 'Roboto', sans-serif;
+    --fuenteSecundaria: 'Lato', sans-serif;
+    /*paleta de colores*/
+    --colorPrincipal:#1073ba;
+    --colorSecundario:#00da55;
+    --negro:#1C1C1C;
+    --blanco:#fff;
+    --grisClaro:#e1e1e1;
+
+    --separacion:5rem;
+}
+/*Snipeds*/
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;/*para que 1rem sea = a 10px*/
+}
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+body{
+    font-family: var(--fuentePrincipal);
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+/*Globales*/
+.contenedor{
+    max-width: 120rem;
+    width: 90%;
+    margin: 0 auto;
+}
+h1, h2, h3{
+    font-weight: 900;
+    font-family: var(--fuenteSecundaria);/*reemplazar por variable con su fuente respectiva*/
+    margin: calc(--separacion / 2) 0;/*reemplazar 5rem por variable*/
+}
+h1{
+    font-size: 4.4rem;
+}
+h2{
+    font-size: 3.6rem;
+}
+h3{
+    font-size: 2.8rem;
+}
+img{
+    max-width: 100%;/*con este hack hacemos que las imagenes cubran un maximo del 100% de su contenedor*/
+    display: block;/*con esto eliminamos los espacios restantes entre la imagen y otro elemento hacia abajo*/
+    height: auto;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+.text-gradient{
+    color: transparent;
+    background: linear-gradient(to right,var(--colorPrincipal) 0%, var(--colorSecundario)100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+/*utilidades*/
+.text-center{
+    text-align: center;
+}
+.text-shadow{
+    text-shadow: 0 0 4px rgba(0, 0, 0, .6);
+}
+/**Header*/
+.header{
+    text-align: center;
+    color: var(--blanco);
+    background-color: var(--negro);
+    padding: calc(var(--separacion)*3)0;
+}
+@media (min-width: 768px){
+    .textos-header{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+@media (min-width: 768px){
+    .contenedor-header{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+.tagline-producto{
+    font-size: 2.5rem;
+    line-height: 1;
+    margin: 4rem 0 0 0 ;
+    font-family: var(--fuentePrincipal);
+}
+@media (min-width: 768px){
+    .tagline-producto{
+        text-align: left;
+        margin: 0;
+    }
+}
+.nombre-producto{
+    margin: 1.5rem 0 0 0;
+    line-height: 1;
+    font-size: 5rem;
+    font-family: var(--fuentePrincipal);
+}
+@media (min-width: 768px){
+    .nombre-producto{
+        text-align: left;
+        font-size: 10rem;
+    }
+}
+.precio-producto span{
+    font-size: 6rem;
+    font-weight: 900;
+}
+@media (min-width: 768px){
+    .precio-producto{
+        text-align: left;
+    }
+}
+@media (min-width: 768px){
+    .descripcion-producto{
+        text-align: left;
+    }
+}
+/*Tarjeta; info producto*/
+.contenedor-tarjetas{
+    margin-top: var(--separacion);
+}
+@media (min-width: 768px){
+    .contenedor-tarjetas{
+        display: flex;
+    }
+}
+
+.tarjeta{
+    text-align: center;
+    padding: 1rem;
+}
+@media (min-width: 768px){
+    .tarjeta{
+        padding: 2rem;
+    }
+}
+.img-tarjeta{
+    width: 5rem;
+    margin: 0 auto;
+}
+.titulo-tarjeta{
+    color: var(--colorPrincipal);
+    text-transform: uppercase;
+    margin: 2rem 0;
+    font-size: 2.5rem;
+}
+/*Sobre techPRO*/
+.sobre-techpro{
+    background: linear-gradient(to bottom, transparent 50%, var(--colorPrincipal) 0%), url(../img/imagen-mujer.jpg);
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 100%, 110rem;
+
+}
+@media (min-width: 768px){
+    .sobre-techpro{
+        background: linear-gradient(to left, transparent 50%, var(--colorPrincipal) 0%), url(../img/imagen-mujer.jpg);
+        background-repeat: no-repeat;
+        background-size: 100%, 210rem;
+        grid-template-rows: unset;
+        grid-template-columns: repeat(2, 1fr);
+        padding: calc( var(--separacion ) * 2) 0;
+        background-position: right center;
+        margin-top: 5rem;
+    }
+}
+.sobre-tech-grid{
+    display: grid;
+    grid-template-rows: repeat(2, 40rem);
+}
+@media (min-width: 768px){
+    .sobre-tech-grid{
+        grid-template-rows: unset;
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+.textos-sobre{
+    color: var(--blanco);
+    grid-row: 2/3;
+    
+}
+.titulo-sobre{
+    text-transform: capitalize;
+}
+@media (min-width: 768px){
+    .titulo-sobre{
+        font-size: 4rem;
+    }
+}
+.descripcion-sobre{
+    line-height: 2;
+    font-family: var(--fuenteSecundaria);
+}
+/*Precios techPRO*/
+.modelos {
+    padding: var(--separacion) 0;
+}
+
+.header-modelos {
+    font-size: 6rem;
+    margin-bottom: var(--separacion);
+}
+
+
+.listado-modelos {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+@media (min-width: 992px) { 
+    .listado-modelos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 20rem);
+        gap: 4rem;
+    }
+}
+
+.modelo {
+    background-color: var(--grisClaro);
+    margin-bottom: 2rem;
+    padding-left: 4rem;
+    color: var(--primario);
+    border-radius: 2rem;
+    min-height: 20rem;
+    background-repeat: no-repeat;
+    background-position: 90% center;
+    background-size: 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition-property: transform background-size;
+    transition-duration: .3s;
+}
+.modelo:hover {
+    transform: scale(1.1);
+    background-size: 30rem;
+}
+
+
+@media (min-width: 992px) { 
+    .modelo {
+        margin-bottom: 0;
+    }
+}
+
+.modelo h3 {
+    font-size: 2.4rem;
+}
+
+.modelo .precio {
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 0;
+}
+
+.modelo:first-of-type {
+    margin-bottom: 0;
+}
+
+.modelo-x {
+    background-image: url(../img/modelo-x.svg);
+}
+.modelo-y {
+    background-image: url(../img/modelo-y.svg);
+}
+
+.modelo-z {
+    background-image: url(../img/modelo-z.svg);
+    background-color: var(--colorPrincipal);
+    color: var(--blanco);
+}
+@media (min-width: 992px) { 
+    .modelo-z {
+        grid-column: 2 / 3;
+        grid-row: 1 / 3;
+        background-size: 25rem;
+    }
+    .modelo-z h3 {
+        font-size: 4rem;
+    }
+}
+.modelo-z .precio {
+    font-size: 6rem;
+}
+/*newsleters*/
+.newsletter {
+
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 100%, 70rem;
+}
+.notavif.notwebp .newsletter {
+    background-image: linear-gradient( to bottom, transparent 50%, var(--blanco) 0% ), url(../img/newsletter.jpg) ;
+}
+
+.webp .newsletter {
+    background-image: linear-gradient( to bottom, transparent 50%, var(--blanco) 0% ), url(../img/newsletter.webp) ;
+}
+
+.avif .newsletter {
+    background-image: linear-gradient( to bottom, transparent 50%, var(--blanco) 0% ), url(../img/newsletter.avif) ;
+}
+@media (min-width: 768px) { 
+    .newsletter {
+        background-position: center, -21rem 0rem;
+        background-size: 100%, 100rem;
+        padding: 10rem 0;
+    }
+    .notavif.notwebp .newsletter {
+        background-image: linear-gradient( to right, transparent 50%, var(--blanco) 0% ), url(../img/newsletter.jpg) ;
+    }
+    .webp .newsletter {
+        background-image: linear-gradient( to right, transparent 50%, var(--blanco) 0% ), url(../img/newsletter.webp) ;
+    }
+    .avif .newsletter {
+        background-image: linear-gradient( to right, transparent 50%, var(--blanco) 0% ), url(../img/newsletter.avif) ;
+    }
+}
+@media (min-width: 2200px) { 
+    .newsletter {
+        background-size: 100%, 200rem;
+        background-position: center, 0% -30rem;
+    }
+}
+
+.contenido-newsletter {
+    display: grid;
+    grid-template-rows:repeat(2, 30rem);
+    gap: var(--separacion);
+}
+@media (min-width: 768px) { 
+    .contenido-newsletter {
+        grid-template-rows: unset;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.texto-newsletter {
+    grid-row: 2 / 3;
+}
+@media (min-width: 768px) { 
+    .texto-newsletter {
+        grid-row: unset;
+        grid-column: 2 / 3;
+    }
+}
+.formulario input[type="text"] {
+    width: 100%;
+    padding: 1rem;
+}
+
+.formulario input[type="submit"] {
+    width: 100%;
+    padding: 2rem;
+    background-color: var(--colorPrincipal);
+    color: var(--blanco);
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 900;
+    border: none;
+}
+
+.footer p {
+    text-align: center;
+    font-family: var(--fuenteSecundaria);
+    text-transform: uppercase;
+    font-size: 2rem;
+    color: var(--colorPrincipal);
+    padding: 2rem 0;
+}
+
+
+
+
